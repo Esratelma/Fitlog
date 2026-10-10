@@ -1,0 +1,77 @@
+
+@import "tailwindcss";
+:root {
+  --bg: #080b09;
+  --panel: #101510;
+  --panel2: #151b16;
+  --line: #293229;
+  --muted: #9ca69c;
+  --text: #f4f7f2;
+  --accent: #ccff00;
+  --accent2: #b8e600;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+select {
+  font: inherit;
+}
+.display {
+  font-family: Impact, "Arial Narrow", Arial, sans-serif;
+  letter-spacing: 0.025em;
+}
+.container {
+  width: min(1240px, calc(100% - 32px));
+  margin-inline: auto;
+}
+.grid-bg {
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+  background-size: 32px 32px;
+}
+.glow {
+  box-shadow: 0 0 70px rgba(204, 255, 0, 0.08);
+}
+@keyframes pulse {
+  50% {
+    opacity: 0.45;
+  }
+}
+.pulse {
+  animation: pulse 1.3s ease-in-out infinite;
+}
+@keyframes toast {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.toast-enter {
+  animation: toast 0.25s ease-out;
+}
